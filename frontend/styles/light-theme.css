@@ -1,0 +1,616 @@
+﻿/* ============================================================
+   SOLAR CRM — LIGHT THEME (White Mode)
+   Overrides all dark variables with clean white/light palette
+   ============================================================ */
+
+/* ── Override CSS Variables ──────────────────────────────────── */
+:root.light-mode {
+  /* Backgrounds — White */
+  --bg-base:        #F0F4FF;
+  --bg-surface:     #FFFFFF;
+  --bg-elevated:    #F5F7FF;
+  --bg-card:        #FFFFFF;
+  --bg-hover:       #EEF2FF;
+  --bg-active:      #E5EAFF;
+
+  /* Text — Dark */
+  --text-primary:   #1A2440;
+  --text-secondary: #4A5568;
+  --text-muted:     #718096;
+  --text-disabled:  #A0AEC0;
+
+  /* Borders — Light */
+  --border:        rgba(0,0,0,0.07);
+  --border-hover:  rgba(0,0,0,0.13);
+  --border-focus:  rgba(139,92,246,0.6);
+  --border-gold:   rgba(139,92,246,0.35);
+
+  /* Shadows — Soft */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.05);
+  --shadow-lg:  0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-gold: 0 0 24px rgba(139,92,246,0.2);
+
+  /* Glass — White */
+  --glass-bg:     rgba(255,255,255,0.92);
+  --glass-border: rgba(0,0,0,0.07);
+
+  /* Gradients — Light */
+  --grad-card:   linear-gradient(135deg, #FFFFFF, #F5F7FF);
+  --grad-sidebar:linear-gradient(180deg, #FFFFFF 0%, #F8FAFF 100%);
+}
+
+/* ── Body ────────────────────────────────────────────────────── */
+body.light-mode {
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+.light-mode ::-webkit-scrollbar-track { background: #F0F4FF; }
+.light-mode ::-webkit-scrollbar-thumb { background: #CBD5E0; }
+.light-mode ::-webkit-scrollbar-thumb:hover { background: #8B5CF6; }
+
+/* ── Splash ───────────────────────────────────────────────────── */
+.light-mode #splash {
+  background: linear-gradient(135deg, #FFFBEB 0%, #EEF2FF 100%);
+}
+.light-mode .splash-brand { color: #1A2440; }
+.light-mode .splash-sub { color: #718096; }
+.light-mode .splash-bar-wrap { background: #E2E8F0; }
+
+/* ── Sidebar ──────────────────────────────────────────────────── */
+.light-mode .sidebar {
+  background: #FFFFFF !important;
+  border-right: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.06) !important;
+}
+.light-mode .sidebar-brand {
+  background: #FAFBFF;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .brand-name-sm {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.light-mode .sidebar-user {
+  background: #FAFBFF;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .user-name { color: #1A2440; }
+.light-mode .user-role-badge {
+  background: rgba(139,92,246,0.1);
+  color: #7C3AED;
+  border-color: rgba(139,92,246,0.2);
+}
+.light-mode .user-menu-btn { color: #A0AEC0; }
+
+.light-mode .sidebar-nav { background: #FFFFFF; }
+.light-mode .nav-section-label { color: #CBD5E0; }
+.light-mode .nav-item {
+  color: #4A5568;
+  border: 1px solid transparent;
+}
+.light-mode .nav-item:hover {
+  background: #F5F7FF;
+  color: #1A2440;
+}
+.light-mode .nav-item.active {
+  background: linear-gradient(135deg, #FFFBEB, #FFF8E0);
+  color: #B45309;
+}
+.light-mode .nav-item.active::before { background: #8B5CF6; }
+.light-mode .nav-badge {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  color: #fff;
+}
+
+.light-mode .sidebar-footer {
+  background: #FAFBFF;
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .api-status {
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  color: #15803D;
+}
+.light-mode .status-dot { background: #22C55E; }
+.light-mode .btn-logout {
+  background: rgba(239,68,68,0.06);
+  border: 1px solid rgba(239,68,68,0.12);
+  color: #DC2626;
+}
+.light-mode .btn-logout:hover {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.25);
+}
+
+/* ── Top Header ──────────────────────────────────────────────── */
+.light-mode .top-header {
+  background: rgba(255,255,255,0.97) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 2px 12px rgba(0,0,0,0.05) !important;
+}
+.light-mode .breadcrumb { color: #1A2440; }
+
+.light-mode .header-search input {
+  background: #F5F7FF;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  color: #1A2440;
+}
+.light-mode .header-search input:focus {
+  background: #FFFBEB;
+  border-color: rgba(139,92,246,0.5);
+}
+.light-mode .header-search input::placeholder { color: #A0AEC0; }
+
+.light-mode .btn-icon {
+  background: #F5F7FF;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  color: #4A5568;
+}
+.light-mode .btn-icon:hover {
+  background: #EEF2FF;
+  border-color: rgba(0,0,0,0.13);
+  color: #1A2440;
+}
+.light-mode .header-avatar {
+  border: 2px solid rgba(139,92,246,0.35);
+  color: #000;
+}
+
+.light-mode #live-clock { color: #A0AEC0 !important; }
+
+/* ── Page Content ────────────────────────────────────────────── */
+.light-mode .page-content { background: var(--bg-base); }
+
+/* ── Page Header ─────────────────────────────────────────────── */
+.light-mode .page-title { color: #1A2440; }
+.light-mode .page-subtitle { color: #718096; }
+
+/* ── Stat Cards ──────────────────────────────────────────────── */
+.light-mode .stat-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .stat-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+.light-mode .stat-card .stat-value { color: #1A2440; }
+.light-mode .stat-card .stat-label { color: #718096; }
+.light-mode .stat-card .stat-sub { color: #A0AEC0; }
+.light-mode .stat-card.gold   .stat-value { color: #7C3AED; }
+.light-mode .stat-card.teal   .stat-value { color: #0D9488; }
+.light-mode .stat-card.blue   .stat-value { color: #7C3AED; }
+.light-mode .stat-card.green  .stat-value { color: #15803D; }
+.light-mode .stat-card.purple .stat-value { color: #7C3AED; }
+.light-mode .stat-card.red    .stat-value { color: #DC2626; }
+.light-mode .stat-icon { background: rgba(0,0,0,0.04) !important; }
+
+.light-mode .stat-trend.up { background: rgba(34,197,94,0.1); color: #15803D; border-color: rgba(34,197,94,0.2); }
+.light-mode .stat-trend.down { background: rgba(239,68,68,0.1); color: #DC2626; border-color: rgba(239,68,68,0.2); }
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.light-mode .card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .card-header {
+  background: #FAFBFF !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .card-title { color: #1A2440 !important; }
+.light-mode .card-body { background: #FFFFFF; }
+
+/* ── Table ───────────────────────────────────────────────────── */
+.light-mode .data-table thead th {
+  background: #FAFBFF !important;
+  color: #A0AEC0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+}
+.light-mode .data-table tbody tr { border-bottom: 1px solid rgba(0,0,0,0.05) !important; }
+.light-mode .data-table tbody tr:hover { background: #F8FAFF !important; }
+.light-mode .data-table tbody td { color: #4A5568; }
+.light-mode .data-table tbody td:first-child { color: #1A2440; }
+.light-mode .table-wrapper { background: #FFFFFF; }
+
+/* ── Filter Bar ──────────────────────────────────────────────── */
+.light-mode .filter-bar { background: transparent; }
+.light-mode .filter-chip {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  color: #4A5568;
+}
+.light-mode .filter-chip:focus, .light-mode .filter-chip:hover {
+  background: #FFFBEB;
+  border-color: rgba(139,92,246,0.4);
+  color: #7C3AED;
+}
+
+.light-mode .filter-bar .search-box { background: #FFFFFF; }
+.light-mode .filter-bar .search-box input {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  color: #1A2440;
+}
+.light-mode .filter-bar .search-box input:focus {
+  background: #FFFBEB;
+  border-color: rgba(139,92,246,0.5);
+}
+.light-mode .filter-bar .search-box input::placeholder { color: #A0AEC0; }
+.light-mode .filter-bar .search-box .s-icon { color: #A0AEC0; }
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.light-mode .btn-secondary {
+  background: #F5F7FF;
+  border: 1.5px solid rgba(0,0,0,0.09);
+  color: #4A5568;
+}
+.light-mode .btn-secondary:hover {
+  background: #EEF2FF;
+  border-color: rgba(0,0,0,0.14);
+  color: #1A2440;
+}
+.light-mode .btn-ghost {
+  background: transparent;
+  border: 1.5px solid rgba(0,0,0,0.09);
+  color: #718096;
+}
+.light-mode .btn-ghost:hover { background: #F5F7FF; color: #4A5568; }
+
+/* ── Badges ──────────────────────────────────────────────────── */
+.light-mode .badge-won { background: rgba(21,128,61,0.08); color: #15803D; border-color: rgba(21,128,61,0.18); }
+.light-mode .badge-lost { background: rgba(220,38,38,0.08); color: #DC2626; border-color: rgba(220,38,38,0.18); }
+.light-mode .badge-new { background: rgba(37,99,235,0.08); color: #7C3AED; border-color: rgba(37,99,235,0.18); }
+.light-mode .badge-contacted { background: rgba(180,83,9,0.08);  color: #B45309; border-color: rgba(180,83,9,0.18); }
+.light-mode .badge-qualified { background: rgba(124,58,237,0.08);color: #7C3AED; border-color: rgba(124,58,237,0.18); }
+.light-mode .badge-proposal { background: rgba(194,65,12,0.08); color: #C2410C; border-color: rgba(194,65,12,0.18); }
+.light-mode .badge-hot { background: rgba(220,38,38,0.08);  color: #DC2626; border-color: rgba(220,38,38,0.2); }
+.light-mode .badge-warm { background: rgba(234,88,12,0.08);  color: #EA580C; border-color: rgba(234,88,12,0.18); }
+.light-mode .badge-cold { background: rgba(37,99,235,0.08);  color: #7C3AED; border-color: rgba(37,99,235,0.18); }
+
+/* ── Lead Initials ───────────────────────────────────────────── */
+.light-mode .lead-initials { box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.light-mode .td-lead-name .lead-initials { border: 2px solid rgba(0,0,0,0.06); }
+
+/* ── Lead Action Buttons ─────────────────────────────────────── */
+.light-mode .lead-action-btn {
+  background: #F5F7FF;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  color: #4A5568;
+}
+.light-mode .lead-action-btn:hover {
+  background: #FFFBEB;
+  border-color: rgba(139,92,246,0.35);
+}
+
+/* ── Modal ───────────────────────────────────────────────────── */
+.light-mode .modal-box {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.15) !important;
+}
+.light-mode .modal-header {
+  background: #FAFBFF !important;
+  border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+}
+.light-mode .modal-header h3 { color: #1A2440 !important; }
+.light-mode .modal-body { background: #FFFFFF; color: #4A5568; }
+
+/* ── Drawer ──────────────────────────────────────────────────── */
+.light-mode .drawer {
+  background: #FFFFFF !important;
+  border-left: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.12) !important;
+}
+.light-mode .drawer-header {
+  background: #FAFBFF !important;
+  border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+}
+.light-mode .drawer-header h3 { color: #1A2440 !important; }
+.light-mode .drawer-close { background: rgba(0,0,0,0.04) !important; color: #718096 !important; }
+.light-mode .drawer-close:hover { background: rgba(239,68,68,0.08) !important; color: #DC2626 !important; }
+
+/* ── Toast ───────────────────────────────────────────────────── */
+.light-mode .toast {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+}
+.light-mode .toast-title { color: #1A2440 !important; }
+.light-mode .toast-msg { color: #718096 !important; }
+
+/* ── Notification Panel ──────────────────────────────────────── */
+.light-mode .notif-panel {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.09) !important;
+  box-shadow: 0 16px 56px rgba(0,0,0,0.14) !important;
+}
+.light-mode .panel-header { border-bottom: 1px solid rgba(0,0,0,0.07) !important; }
+.light-mode .panel-header h3 { color: #1A2440 !important; }
+
+/* ── Kanban Board ────────────────────────────────────────────── */
+.light-mode .kanban-board { background: transparent; }
+.light-mode .kanban-col {
+  background: #F5F7FF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+}
+.light-mode .kanban-col-header {
+  background: #FAFBFF !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .kanban-col-title { color: #1A2440 !important; }
+.light-mode .kanban-col-count { background: rgba(0,0,0,0.06) !important; color: #4A5568 !important; }
+.light-mode .kanban-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+}
+.light-mode .kanban-card:hover {
+  border-color: rgba(139,92,246,0.35) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1) !important;
+}
+.light-mode .kanban-card-name { color: #1A2440 !important; }
+.light-mode .kc-meta { color: #718096 !important; }
+
+/* ── Pipeline Mini (Dashboard) ───────────────────────────────── */
+.light-mode .pipeline-step {
+  background: #F5F7FF !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .pipeline-step:hover { background: #FFFBEB !important; border-color: rgba(139,92,246,0.25) !important; }
+.light-mode .pipeline-step-name { color: #4A5568 !important; }
+.light-mode .pipeline-step-count { color: #1A2440 !important; font-weight: 700; }
+
+/* ── Quick Actions (Dashboard) ───────────────────────────────── */
+.light-mode .quick-action-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .quick-action-card:hover {
+  border-color: rgba(139,92,246,0.35) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1) !important;
+}
+.light-mode .qa-title { color: #1A2440 !important; }
+.light-mode .qa-desc { color: #718096 !important; }
+
+/* ── Source / Performer ──────────────────────────────────────── */
+.light-mode .source-item { color: #4A5568 !important; }
+.light-mode .source-name { color: #4A5568 !important; }
+.light-mode .source-bar-wrap { background: #EEF2FF !important; }
+.light-mode .performer-item { border-bottom: 1px solid rgba(0,0,0,0.05) !important; }
+.light-mode .performer-name { color: #1A2440 !important; }
+.light-mode .performer-leads { color: #718096 !important; }
+
+/* ── Activity Feed ───────────────────────────────────────────── */
+.light-mode .activity-item { border-bottom: 1px solid rgba(0,0,0,0.05) !important; }
+.light-mode .activity-desc { color: #4A5568 !important; }
+.light-mode .activity-time { color: #A0AEC0 !important; }
+.light-mode .activity-icon { border: 1px solid rgba(0,0,0,0.06) !important; }
+
+/* ── Funnel ──────────────────────────────────────────────────── */
+.light-mode .funnel-bar {
+  background: rgba(0,0,0,0.03) !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+}
+
+/* ── Progress Bar ────────────────────────────────────────────── */
+.light-mode .progress-bar-wrap { background: #EEF2FF !important; }
+
+/* ── Pagination ──────────────────────────────────────────────── */
+.light-mode .pg-btn {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(0,0,0,0.08) !important;
+  color: #4A5568 !important;
+}
+.light-mode .pg-btn:hover { background: #F5F7FF !important; }
+.light-mode .pg-btn.active {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED) !important;
+  border-color: transparent !important;
+  color: #FFFFFF !important;
+}
+
+/* ── Tab Bar ─────────────────────────────────────────────────── */
+.light-mode .tab-bar { border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+.light-mode .tab-btn { color: #A0AEC0 !important; }
+.light-mode .tab-btn:hover { color: #4A5568 !important; }
+.light-mode .tab-btn.active { color: #7C3AED !important; border-bottom-color: #8B5CF6 !important; }
+
+/* ── Timeline ────────────────────────────────────────────────── */
+.light-mode .timeline-dot { background: #F5F7FF !important; border: 1px solid rgba(0,0,0,0.1) !important; }
+.light-mode .timeline-line { background: rgba(0,0,0,0.07) !important; }
+.light-mode .timeline-title { color: #1A2440 !important; }
+.light-mode .timeline-time { color: #A0AEC0 !important; }
+.light-mode .timeline-body { color: #4A5568 !important; }
+.light-mode .timeline-content { background: #F8FAFF !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+
+/* ── Team Cards ──────────────────────────────────────────────── */
+.light-mode .team-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .team-card:hover { border-color: rgba(139,92,246,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important; }
+.light-mode .team-name { color: #1A2440 !important; }
+.light-mode .team-role { color: #718096 !important; }
+.light-mode .team-stat-val { color: #1A2440 !important; }
+.light-mode .team-stat-label { color: #A0AEC0 !important; }
+.light-mode .team-avatar-lg { border: 2px solid rgba(0,0,0,0.08) !important; }
+
+/* ── Summary Bar ─────────────────────────────────────────────── */
+.light-mode .summary-bar {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+}
+.light-mode .summary-bar-item { border-right: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .summary-bar-item:hover { background: #F8FAFF !important; }
+.light-mode .sb-label { color: #718096 !important; }
+
+/* ── Schedule / Calendar ─────────────────────────────────────── */
+.light-mode .cal-cell {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+}
+.light-mode .cal-cell:hover { background: #FFFBEB !important; border-color: rgba(139,92,246,0.3) !important; }
+.light-mode .cal-cell.today {
+  background: #FFFBEB !important;
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 1px rgba(139,92,246,0.25) inset !important;
+}
+.light-mode .cal-cell.other-month { background: #FAFBFF !important; opacity: 0.6; }
+.light-mode .cal-day { color: #1A2440 !important; }
+.light-mode .cal-header-cell { color: #A0AEC0 !important; }
+
+.light-mode .followup-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  border-left: 3px solid #8B5CF6 !important;
+}
+.light-mode .followup-card:hover { background: #FAFBFF !important; }
+.light-mode .followup-card.overdue { border-left-color: #EF4444 !important; background: #FFF5F5 !important; }
+.light-mode .followup-card.today { border-left-color: #14B8A6 !important; background: #F0FDFA !important; }
+.light-mode .followup-name { color: #1A2440 !important; }
+.light-mode .followup-time { color: #718096 !important; }
+
+/* ── Settings ────────────────────────────────────────────────── */
+.light-mode .settings-grid { gap: 20px; }
+.light-mode .settings-menu {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .settings-menu-item { color: #4A5568 !important; }
+.light-mode .settings-menu-item:hover { background: #F5F7FF !important; color: #1A2440 !important; }
+.light-mode .settings-menu-item.active {
+  background: linear-gradient(135deg, #FFFBEB, #FFF8E0) !important;
+  color: #7C3AED !important;
+}
+.light-mode .settings-panel {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .settings-section { border-bottom: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .settings-section-title { color: #1A2440 !important; }
+.light-mode .settings-section-desc { color: #718096 !important; }
+.light-mode .toggle-row { border-bottom: 1px solid rgba(0,0,0,0.05) !important; }
+.light-mode .toggle-label { color: #1A2440 !important; }
+.light-mode .toggle-desc { color: #718096 !important; }
+.light-mode .toggle-switch { background: #E2E8F0 !important; }
+.light-mode .toggle-switch.on { background: #8B5CF6 !important; }
+
+/* ── Quote Builder ───────────────────────────────────────────── */
+.light-mode .quote-form-panel, .light-mode .quote-preview-panel { background: #FFFFFF !important; border: 1px solid rgba(0,0,0,0.07) !important; }
+.light-mode .quote-section { border-bottom: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .quote-section-title { color: #1A2440 !important; }
+.light-mode .quote-preview {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(139,92,246,0.3) !important;
+}
+.light-mode .quote-header { background: linear-gradient(135deg, #FFFBEB, #FFF8E0) !important; border-bottom: 1px solid rgba(139,92,246,0.2) !important; }
+.light-mode .quote-company { color: #1A2440 !important; }
+.light-mode .quote-table thead th { background: #FAFBFF !important; color: #A0AEC0 !important; border: 1px solid rgba(0,0,0,0.07) !important; }
+.light-mode .quote-table tbody td { color: #4A5568 !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .quote-total-row { background: #FFFBEB !important; }
+.light-mode .quote-actions { background: #FAFBFF !important; border-top: 1px solid rgba(0,0,0,0.06) !important; }
+
+/* ── Reports ─────────────────────────────────────────────────── */
+.light-mode .report-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .report-card-title { color: #1A2440 !important; }
+.light-mode .chart-bar-track { background: #EEF2FF !important; }
+.light-mode .chart-bar-label { color: #4A5568 !important; }
+.light-mode .chart-bar-val { color: #1A2440 !important; font-weight: 600; }
+.light-mode .donut-center-val { color: #1A2440 !important; }
+.light-mode .donut-center-label { color: #718096 !important; }
+.light-mode .legend-label { color: #4A5568 !important; }
+.light-mode .legend-val { color: #1A2440 !important; }
+
+/* ── Detail Section (Lead Drawer) ────────────────────────────── */
+.light-mode .detail-section { border-bottom: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .detail-section-title { color: #1A2440 !important; border-bottom: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .detail-item { background: #F8FAFF !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+.light-mode .detail-label { color: #A0AEC0 !important; }
+.light-mode .detail-value { color: #1A2440 !important; }
+
+/* ── Empty State ─────────────────────────────────────────────── */
+.light-mode .empty-state { background: transparent; }
+.light-mode .empty-title { color: #4A5568 !important; }
+.light-mode .empty-desc { color: #A0AEC0 !important; }
+
+/* ── Call Panel ──────────────────────────────────────────────── */
+.light-mode .call-panel {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.light-mode .call-panel-header { background: #FAFBFF !important; border-bottom: 1px solid rgba(0,0,0,0.07) !important; }
+.light-mode .call-panel-title { color: #1A2440 !important; }
+.light-mode .call-display { background: linear-gradient(135deg, #FFFBEB, #FFF8E0) !important; border-bottom: 1px solid rgba(139,92,246,0.15) !important; }
+.light-mode .call-number { color: #1A2440 !important; }
+.light-mode .call-name { color: #718096 !important; }
+.light-mode .call-outcome { background: #FAFBFF !important; border-top: 1px solid rgba(0,0,0,0.07) !important; }
+.light-mode .call-outcome-title { color: #1A2440 !important; }
+
+/* ── Overlay ─────────────────────────────────────────────────── */
+.light-mode .overlay { background: rgba(30,50,80,0.3) !important; }
+
+/* ── Fields Global ───────────────────────────────────────────── */
+.light-mode .field label { color: #4A5568 !important; }
+.light-mode .field input, .light-mode .field select, .light-mode .field textarea {
+  background: #F8FAFF !important;
+  border: 1.5px solid rgba(0,0,0,0.09) !important;
+  color: #1A2440 !important;
+}
+.light-mode .field input:focus, .light-mode .field select:focus, .light-mode .field textarea:focus {
+  background: #FFFBEB !important;
+  border-color: rgba(139,92,246,0.5) !important;
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.09) !important;
+}
+.light-mode .field input::placeholder, .light-mode .field textarea::placeholder { color: #A0AEC0 !important; }
+
+/* ── Glass ───────────────────────────────────────────────────── */
+.light-mode .glass-card {
+  background: rgba(255,255,255,0.97) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+}
+.light-mode .glass-panel {
+  background: rgba(255,255,255,0.98) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* ── User Avatar ─────────────────────────────────────────────── */
+.light-mode .user-avatar { color: #fff; border: 2px solid rgba(0,0,0,0.08) !important; }
+
+/* ── Misc inline dark overrides ──────────────────────────────── */
+.light-mode [style*="color:var(--text-primary)"] { color: #1A2440 !important; }
+.light-mode [style*="color:var(--text-secondary)"] { color: #4A5568 !important; }
+.light-mode [style*="color:var(--text-muted)"] { color: #718096 !important; }
+
+/* Alert / info box in settings ──────────────────────────────── */
+.light-mode div[style*="background:rgba(245, .light-mode 158, .light-mode 11, .light-mode 0.08)"] {
+  background: #FFFBEB !important;
+  border-color: rgba(139,92,246,0.3) !important;
+}
+.light-mode div[style*="background:rgba(74, .light-mode 222, .light-mode 128, .light-mode 0.08)"] {
+  background: #F0FDF4 !important;
+  border-color: rgba(34,197,94,0.25) !important;
+}
+.light-mode div[style*="background:rgba(239, .light-mode 68, .light-mode 68, .light-mode 0.1)"] {
+  background: #FEF2F2 !important;
+}
+.light-mode div[style*="background:rgba(45, .light-mode 212, .light-mode 191, .light-mode 0.08)"] {
+  background: #F0FDFA !important;
+  border-color: rgba(20,184,166,0.25) !important;
+}
+
+

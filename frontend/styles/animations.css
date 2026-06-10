@@ -1,0 +1,171 @@
+﻿/* ============================================================
+   SOLAR CRM — ANIMATIONS
+   ============================================================ */
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(249,115,22,0); }
+  100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progressFill {
+  from { width: 0; }
+}
+
+/* ── Page Transition ─────────────────────────────────────────── */
+.page-enter {
+  animation: slideInUp 0.3s ease forwards;
+}
+
+/* ── Hover Glow ──────────────────────────────────────────────── */
+.glow-gold:hover {
+  box-shadow: 0 0 20px rgba(139,92,246,0.3);
+}
+.glow-teal:hover {
+  box-shadow: 0 0 20px rgba(45,212,191,0.3);
+}
+
+/* ── Spinner ─────────────────────────────────────────────────── */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+/* ── Card Hover Lift ─────────────────────────────────────────── */
+.hover-lift { transition: transform var(--t-normal), box-shadow var(--t-normal); }
+.hover-lift:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+/* ── Number Animate ──────────────────────────────────────────── */
+.num-animate { animation: countUp 0.5s ease forwards; }
+
+/* ── Chart Bar Animate ───────────────────────────────────────── */
+.bar-animate { animation: progressFill 0.8s ease forwards; }
+
+/* ── Floating Label ──────────────────────────────────────────── */
+.float-label-wrap { position: relative; }
+.float-label-wrap input { padding-top: 20px; }
+.float-label-wrap label {
+  position: absolute; top: 12px; left: 14px;
+  font-size: 14px; color: var(--text-muted);
+  transition: all var(--t-fast);
+  pointer-events: none;
+}
+.float-label-wrap input:focus ~ label,
+.float-label-wrap input:not(:placeholder-shown) ~ label {
+  top: 5px; font-size: 10px; color: var(--primary-400);
+  font-weight: 600; letter-spacing: 0.5px;
+}
+
+/* ── Ripple ──────────────────────────────────────────────────── */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after {
+  content: '';
+  position: absolute;
+  width: 200%; height: 200%;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 1;
+}
+.ripple:active::after {
+  transform: translate(-50%,-50%) scale(1);
+  opacity: 0;
+}
+
+/* ── Loading Dots ────────────────────────────────────────────── */
+.loading-dots { display: inline-flex; gap: 5px; align-items: center; }
+.loading-dots span {
+  width: 6px; height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: loadDot 1.2s ease-in-out infinite;
+}
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loadDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30%            { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ── Gradient Text ───────────────────────────────────────────── */
+.grad-text {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.grad-text-teal {
+  background: var(--grad-teal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow Border ─────────────────────────────────────────────── */
+.border-glow-gold { box-shadow: 0 0 0 1px rgba(139,92,246,0.4), 0 0 20px rgba(139,92,246,0.1); }
+.border-glow-teal { box-shadow: 0 0 0 1px rgba(45,212,191,0.4), 0 0 20px rgba(45,212,191,0.1); }
+
+/* ── Notification pulse ──────────────────────────────────────── */
+@keyframes notifPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(139,92,246,0.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(139,92,246,0); }
+  100% { box-shadow: 0 0 0 0 rgba(139,92,246,0); }
+}
+.notif-pulse { animation: notifPulse 2s ease-in-out infinite; }
+
+

@@ -1,0 +1,458 @@
+/* ============================================================
+   SIP INFRA — ZOHO CRM ENTERPRISE THEME
+   Overrides variable tokens and layouts with Zoho aesthetics
+   ============================================================ */
+
+:root {
+  /* Zoho CRM Brand Colors & System Variables */
+  --zoho-blue:      #1552d7; /* Zoho Signature Royal Blue */
+  --zoho-orange:    #f26a36; /* Zoho Accent Orange */
+  
+  --bg-base:        #f3f4f6; /* Zoho light grey canvas */
+  --bg-surface:     #ffffff; /* White card surface */
+  --bg-elevated:    #ffffff;
+  --bg-card:        #ffffff;
+  --bg-hover:       #f8fafc;
+  --bg-active:      #e2e8f0;
+
+  --primary-500:    var(--zoho-blue);
+  --primary-600:    #1040a6;
+  --primary-700:    #0b2e75;
+
+  --teal-400:       #0ea5e9;
+  --teal-500:       #14b8a6;
+
+  --text-primary:   #1e293b; /* Slate 800 */
+  --text-secondary: #475569; /* Slate 600 */
+  --text-muted:     #64748b; /* Slate 500 */
+  --text-disabled:  #94a3b8; /* Slate 400 */
+
+  --border:        #e2e8f0; /* Slate 200 */
+  --border-hover:  #cbd5e1; /* Slate 300 */
+  --border-focus:  var(--zoho-blue);
+  --border-gold:   var(--zoho-blue);
+
+  --radius-sm:     4px; /* Square corporate borders */
+  --radius-md:     4px;
+  --radius-lg:     6px;
+  --radius-xl:     8px;
+
+  --font-body:     'Inter', sans-serif;
+  --font-heading:  'Inter', sans-serif;
+
+  --shadow-sm:     0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  
+  --grad-card:     none;
+  --grad-sidebar:  none;
+  --grad-gold:     var(--zoho-blue);
+}
+
+/* Base Body Styles */
+body {
+  background: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+}
+
+/* Sidebar (Left Navigation) */
+.sidebar {
+  background: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: none !important;
+}
+.sidebar-brand {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.brand-name-sm {
+  color: var(--zoho-blue) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+}
+.sidebar-user {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.sidebar-nav {
+  background: #ffffff !important;
+}
+.nav-section-label {
+  color: #94a3b8 !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  padding-left: 14px !important;
+}
+.nav-item {
+  color: #475569 !important;
+  border-radius: 0 !important;
+  margin: 2px 0 !important;
+  border-left: 3px solid transparent !important;
+  padding: 10px 18px !important;
+  font-size: 13.5px !important;
+}
+.nav-item:hover {
+  background: #f1f5f9 !important;
+  color: var(--zoho-blue) !important;
+}
+.nav-item.active {
+  background: #eff6ff !important;
+  color: var(--zoho-blue) !important;
+  border-left-color: var(--zoho-blue) !important;
+  font-weight: 600 !important;
+}
+
+/* Header */
+.top-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: none !important;
+}
+.header-search {
+  max-width: 450px !important;
+  background: #f1f5f9 !important;
+  border-radius: 4px !important;
+  border: 1px solid transparent !important;
+}
+.header-search input {
+  background: transparent !important;
+  color: #1e293b !important;
+}
+.header-search:focus-within {
+  background: #ffffff !important;
+  border-color: var(--zoho-blue) !important;
+  box-shadow: 0 0 0 2px rgba(21, 82, 215, 0.15) !important;
+}
+
+/* Cards (Widgets) */
+.card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 4px !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.card-header {
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding: 14px 18px !important;
+  background: #ffffff !important;
+}
+.card-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+/* Tables (Zoho CRM grid layout) */
+.table-wrapper {
+  box-shadow: none !important;
+}
+.data-table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+.data-table th {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 12px 18px !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  border-top: none !important;
+}
+.data-table td {
+  padding: 12px 18px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  font-size: 13px !important;
+  color: #334155 !important;
+}
+.data-table tr:hover {
+  background: #f8fafc !important;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  padding: 8px 16px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+}
+.btn-primary {
+  background: var(--zoho-blue) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--zoho-blue) !important;
+}
+.btn-primary:hover {
+  background: #1040a6 !important;
+  border-color: #1040a6 !important;
+}
+.btn-secondary {
+  background: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+.btn-secondary:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+.btn-teal {
+  background: #0ea5e9 !important;
+  color: #ffffff !important;
+  border: 1px solid #0ea5e9 !important;
+}
+
+/* Badges */
+.badge {
+  border-radius: 3px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 2px 8px !important;
+}
+.badge-new { background: #eff6ff !important; color: var(--zoho-blue) !important; border: 1px solid #bfdbfe !important; }
+.badge-contacted { background: #fef3c7 !important; color: #d97706 !important; border: 1px solid #fde68a !important; }
+.badge-qualified { background: #f5f3ff !important; color: #7c3aed !important; border: 1px solid #ddd6fe !important; }
+.badge-proposal { background: #fff7ed !important; color: #ea580c !important; border: 1px solid #fed7aa !important; }
+.badge-won { background: #ecfdf5 !important; color: #059669 !important; border: 1px solid #a7f3d0 !important; }
+.badge-lost { background: #fef2f2 !important; color: #dc2626 !important; border: 1px solid #fecaca !important; }
+
+/* Stats Cards */
+.stat-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 4px !important;
+  padding: 18px !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.stat-value {
+  color: #1e293b !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  margin: 6px 0 !important;
+}
+.stat-label {
+  color: #64748b !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+.stat-icon {
+  background: #f1f5f9 !important;
+  color: var(--zoho-blue) !important;
+  border-radius: 4px !important;
+}
+
+/* Forms & Dialogs */
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="number"], input[type="date"], select, textarea {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--zoho-blue) !important;
+  box-shadow: 0 0 0 2px rgba(21, 82, 215, 0.15) !important;
+  outline: none !important;
+}
+
+/* Modals */
+.modal-box {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 4px !important;
+  box-shadow: var(--shadow-lg) !important;
+  color: #1e293b !important;
+}
+.modal-header {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* Drawers */
+.drawer {
+  background: #ffffff !important;
+  border-left: 1px solid #e2e8f0 !important;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.08) !important;
+}
+.drawer-header {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* Tab Bar */
+.tab-bar {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.tab-btn {
+  color: #64748b !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+}
+.tab-btn.active {
+  color: var(--zoho-blue) !important;
+  border-bottom-color: var(--zoho-blue) !important;
+}
+
+/* Immersive Login Style Zoho-style */
+.immersive-auth-screen {
+  background: linear-gradient(135deg, var(--zoho-blue) 0%, #0c2d75 100%) !important;
+}
+
+#login-screen .auth-immersive-form .glass-panel {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-radius: 6px !important;
+  color: #1e293b !important;
+}
+
+#login-screen .auth-immersive-form .login-header h2 {
+  color: #1e293b !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+}
+
+#login-screen .auth-immersive-form .login-header p {
+  color: #64748b !important;
+}
+
+#login-screen .auth-immersive-form label {
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 4px !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper input {
+  color: #1e293b !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 12px 14px 12px 42px !important; /* 42px padding-left to clear the icon */
+  font-size: 13.5px !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper input:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper:focus-within {
+  border-color: var(--zoho-blue) !important;
+  box-shadow: 0 0 0 2px rgba(21, 82, 215, 0.15) !important;
+}
+
+#login-screen .auth-immersive-form .input-icon {
+  position: absolute !important;
+  left: 14px !important;
+  font-size: 15px !important;
+  color: #64748b !important;
+  opacity: 0.8 !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+#login-screen .auth-immersive-form .pwd-toggle {
+  position: absolute !important;
+  right: 12px !important;
+  font-size: 16px !important;
+  color: #64748b !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
+}
+
+#login-screen .auth-immersive-form .pwd-toggle:hover {
+  color: var(--zoho-blue) !important;
+}
+
+#login-screen .auth-immersive-form .checkbox-label {
+  color: #475569 !important;
+}
+
+#login-screen .auth-immersive-form .checkbox-label input[type=checkbox] {
+  accent-color: var(--zoho-blue) !important;
+}
+
+#login-screen .auth-immersive-form .forgot-link {
+  color: var(--zoho-blue) !important;
+}
+
+#login-screen .auth-immersive-form .forgot-link:hover {
+  color: var(--zoho-orange) !important;
+}
+
+#login-screen .auth-immersive-form .auth-switch {
+  color: #64748b !important;
+}
+
+#login-screen .auth-immersive-form .auth-switch a {
+  color: var(--zoho-blue) !important;
+  font-weight: 600 !important;
+}
+
+#login-screen .auth-immersive-form .auth-switch a:hover {
+  text-decoration: underline !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper select#signup-role {
+  background: transparent !important;
+  border: none !important;
+  color: #1e293b !important;
+  padding: 12px 36px 12px 42px !important;
+  font-size: 13.5px !important;
+  width: 100% !important;
+  box-shadow: none !important;
+  appearance: none !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper span[style*="pointer-events:none"] {
+  color: #64748b !important;
+}
+
+.btn-neon-submit {
+  background: var(--zoho-orange) !important; /* Zoho signature Orange submit button */
+  border-color: var(--zoho-orange) !important;
+  color: #ffffff !important;
+}
+
+.btn-neon-submit:hover {
+  background: #d95826 !important;
+}
+
+.brand-top-nav {
+  font-weight: 800 !important;
+}
+
+/* Hide splash screen styling overrides */
+#splash {
+  background: #ffffff !important;
+  color: var(--zoho-blue) !important;
+}
+.splash-brand {
+  color: var(--zoho-blue) !important;
+}
+.splash-bar {
+  background: var(--zoho-blue) !important;
+}

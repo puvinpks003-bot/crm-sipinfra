@@ -1,0 +1,30 @@
+# ============================================================
+# SIP INFRA — Project Requirements
+# ============================================================
+# The application has been upgraded from a static frontend 
+# to a full-stack Django application.
+#
+# To install all backend dependencies, run:
+# pip install -r requirements.txt
+# ============================================================
+
+# --- Django Framework & REST API ---
+django>=4.2.0
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.3.1
+django-cors-headers>=4.0.0
+
+# --- Database Drivers (Uncomment when deploying to AWS) ---
+# psycopg2-binary>=2.9.9  # For PostgreSQL
+# pymysql>=1.1.0          # For MySQL
+
+# --- OPTIONAL: Twilio (for real WhatsApp / SMS integration) ---
+# twilio>=8.0.0
+
+# --- OPTIONAL: PDF generation (for quote export) ---
+# reportlab>=4.1.0
+# weasyprint>=61.0
+
+# --- OPTIONAL: Excel/CSV export ---
+# openpyxl>=3.1.0
+# pandas>=2.2.0

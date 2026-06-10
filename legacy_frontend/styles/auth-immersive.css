@@ -1,0 +1,292 @@
+/* ── Immersive Eco-Tech Auth Screen ────────────────────────────── */
+.immersive-auth-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-screen:not(.active) {
+  display: none !important;
+}
+
+.auth-bg-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../assets/images/eco-bg.png?v=2') center/cover no-repeat;
+  z-index: 0;
+}
+
+/* Deep slate-blue/indigo overlay */
+.auth-bg-layer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(30,40,70,0.85) 0%, rgba(15,20,40,0.9) 100%);
+  mix-blend-mode: multiply;
+}
+
+.auth-content-layer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+}
+
+/* ── Branding Typography (Left Side) ── */
+.auth-immersive-brand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.brand-top-nav {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-center-text {
+  position: relative;
+  max-width: 600px;
+}
+
+.sub-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.neon-plus {
+  color: var(--accent-neon, #00FF88);
+  font-weight: 300;
+}
+
+.neon-line {
+  color: var(--accent-neon, #00FF88);
+  display: inline-block;
+  transform: translateY(-8px);
+}
+
+.brand-slogan-bar {
+  display: inline-block;
+  background: rgba(255,255,255,0.9);
+  color: #1E2846;
+  padding: 12px 30px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+
+.brand-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-neon {
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-neon.solid {
+  background: var(--accent-neon, #00FF88);
+  color: #000;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.btn-neon.solid:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-neon-submit {
+  background: var(--accent-neon, #00FF88) !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-neon-submit:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Decorative SVG Accents */
+.neon-starburst {
+  position: absolute;
+  top: -20px;
+  left: -60px;
+  width: 80px;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L52 48L100 50L52 52L50 100L48 52L0 50L48 48Z' fill='%2300FF88'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation: rotateSlow 20s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* ── Glassmorphism Form (Right/Center Side) ──────────────── */
+#login-screen .auth-immersive-form {
+  flex: 0 0 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+#login-screen .auth-immersive-form .glass-panel {
+  width: 100%;
+  background: rgba(20, 30, 60, 0.6) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05) !important;
+  padding: 50px;
+  border-radius: 20px;
+  color: white !important;
+}
+
+#login-screen .auth-immersive-form .login-header h2 {
+  color: white !important;
+}
+
+#login-screen .auth-immersive-form .login-header p {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+#login-screen .auth-immersive-form label {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper input,
+#login-screen .auth-immersive-form .input-wrapper select {
+  background: rgba(0,0,0,0.3) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: white !important;
+}
+
+#login-screen .auth-immersive-form .input-wrapper input:focus,
+#login-screen .auth-immersive-form .input-wrapper select:focus {
+  border-color: var(--accent-neon, #00FF88) !important;
+  box-shadow: 0 0 0 3px rgba(0,255,136,0.1) !important;
+}
+
+#login-screen .auth-immersive-form .input-icon {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+#login-screen .auth-immersive-form .auth-switch {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+#login-screen .auth-immersive-form .auth-switch a {
+  color: var(--accent-neon, #00FF88) !important;
+}
+
+#login-screen .auth-immersive-form .role-card {
+  background: rgba(0,0,0,0.3) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: white !important;
+}
+
+#login-screen .auth-immersive-form .role-card.active {
+  border-color: var(--accent-neon, #00FF88) !important;
+  background: rgba(0,255,136,0.1) !important;
+}
+
+#login-screen .auth-immersive-form .role-label {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* ── Advanced Auth Animations ───────────────────────────────── */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-stagger {
+  opacity: 0;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--stagger-idx, 1) * 0.1s);
+}
+
+/* Password Eye Bounce */
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pwd-toggle:active {
+  transform: scale(0.8);
+}
+.pwd-toggle {
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: rgba(255,255,255,0.6);
+}
+.pwd-toggle:hover {
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .auth-content-layer {
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    gap: 40px;
+  }
+  .brand-top-nav {
+    position: relative;
+    top: 0; left: 0;
+    margin-bottom: 20px;
+  }
+  .main-title { font-size: 50px; }
+  .auth-immersive-form { flex: 0 0 auto; width: 100%; max-width: 450px; }
+  .neon-starburst { display: none; }
+}
